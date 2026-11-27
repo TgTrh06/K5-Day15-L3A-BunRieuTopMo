@@ -6,30 +6,43 @@ Track: [x] A · [ ] B · [ ] C · [ ] D · [ ] E — bài toán: A2 · Trợ lý
 Data BTC cấp đã dùng (nếu có — không commit nguyên file): Tham khảo cấu trúc lịch/phòng trong `data/training-ops/` để dựng bộ thông báo giả lập `data/announcements_sample.json`.
 
 ## §0. Hiện tại việc này diễn ra thế nào *(guide 1.1)*
-- Luồng hiện tại của việc này, trong khoá hoặc trên app thật (3–5 bước; ảnh chụp từ tài khoản của mình, đã che thông tin):
-- Công cụ / AI đang được dùng cho việc này (nếu có) + nguồn. Không kiểm được thì ghi "chưa kiểm":
+- Luồng hiện tại của việc này trong khoá:
+  1. Ban đào tạo / Lab Coach đăng lịch học, hạn nộp hoặc thông báo đổi phòng/đổi giờ rải rác trên nhiều kênh Discord (`#thong-bao`, `#su-kien`, `#chung`), trong thread con của tin lịch tuần, hoặc gửi qua email Outlook.
+  2. Học viên thường xem tin tổng hợp tuần của lớp trưởng trên Zalo hoặc tự lướt các kênh / dùng thanh tìm kiếm Discord trước giờ học hoặc deadline.
+  3. Khi lịch thay đổi sát giờ (như ca đổi phòng `C303 → C204` ngày 21/11 trên `#chung`, đổi giờ mentor duty trong thread ở `P1`, hay lùi giờ workshop ở `P3`), thông tin cũ không được gắn cờ đã thay thế khiến học viên mất 10–15 phút tự tìm.
+  4. Nếu không tìm thấy, học viên nhắn hỏi bạn qua Messenger hoặc đăng câu hỏi lên `#chung`, phải chờ 23–76 phút mới có Lab Coach/bạn trả lời (hoặc bị trôi không có phản hồi).
+- Công cụ / AI đang được dùng cho việc này: Chưa thấy bot AI tra cứu lịch/hạn nộp có trích dẫn nguồn trên Discord của lớp; hiện học viên chỉ dùng tìm kiếm mặc định của Discord, tin tổng hợp thủ công trên Zalo và hỏi trực tiếp trên kênh chung (nguồn: quan sát `#chung` tại `evidence/data-mining.md` và phỏng vấn `evidence/interviews/P1–P3.md`).
 
 ## §1. Người dùng & bằng chứng *(guide 1.1, 1.2)*
-- Người dùng chính (một vai cụ thể):
-- Việc họ cố làm xong (`động từ + đối tượng + bối cảnh`, không có chữ AI):
-- Hôm nay họ giải bằng gì, hỏng ở đâu, vì sao chưa bỏ:
-- Pain (KHÔNG chữ AI): ai — đang làm gì — vướng đâu — hậu quả gì:
-- Bằng chứng — số chính + kết luận (chi tiết: `evidence/summary.md`): __
+- Người dùng chính (một vai cụ thể): Học viên lớp L3 (L3A/L3B) khoá AI20K cần tra cứu nhanh lịch học, phòng học và hạn nộp trước mỗi buổi học/lab/workshop hoặc deadline.
+- Việc họ cố làm xong: Tra cứu chính xác lịch học, phòng học và hạn nộp còn hiệu lực từ thông báo chính thức trước giờ học hoặc hạn nộp.
+- Hôm nay họ giải bằng gì, hỏng ở đâu, vì sao chưa bỏ: Tự lục các kênh Discord, xem tin tổng hợp Zalo, nhắn hỏi bạn hoặc hỏi trên `#chung`. Hỏng khi tin đổi giờ nằm trong thread (P1), đổi phòng sát giờ không được đồng bộ (ca `C303 → C204` chờ 23 phút, bị hỏi lại sau 53 phút), tin tổng hợp Zalo bị cũ (P3), hoặc thông tin gửi qua email không có trên Discord (P2). Chưa bỏ vì chưa có kênh tra cứu tập trung duy nhất.
+- Pain (KHÔNG chữ AI): Học viên lớp L3 — khi cần kiểm tra lại lịch học, phòng học hoặc hạn nộp — phải tự lục nhiều kênh và thread Discord rời rạc hoặc hỏi lại trên kênh chung, dẫn đến mất 10–15 phút tìm kiếm mỗi lần, chờ 23–76 phút mới có người trả lời (hoặc bị trôi), thậm chí đi nhầm phòng hoặc nhầm giờ học.
+- Bằng chứng — số chính + kết luận (chi tiết: `evidence/summary.md`): Đào data `#chung` (`20/11–26/11`, `N = 13` câu hỏi thật): **7/13 (53,8%)** là câu hỏi logistics, **2/7 (28,6%)** câu logistics là hỏi lặp, **3/7 (42,9%)** chờ >15 phút hoặc bị trôi, và **5/13 (38,5%)** là học vụ cá nhân/quy định. Phỏng vấn 3 học viên L3B (`P1–P3`): **3/3** mất 10–15 phút tìm thông tin (`1–4 lần/tháng`), **2/3** từng nhầm phòng/nhầm giờ. Hai nguồn khớp chặt ở pain đổi phòng/đổi giờ sát giờ và thông tin nằm ngoài Discord (email).
 
 ## §2. Impact & quyết định chọn *(guide 1.3)*
 
 | Hướng | Bao nhiêu người gặp | Bao nhiêu lần / tháng | Mỗi lần tốn gì | Impact / tháng | Làm kịp không | Chọn? |
 |---|---|---|---|---|---|---|
-|  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |
+| **A2 · Trợ lý Discord tra cứu lịch & hạn nộp có trích dẫn** | **436 học viên** *(số học viên có hoạt động thực tế của khoá L3–L4, nguồn: `data/preclass/README.md`)* | **2,7 lần/tháng** *(trung bình P1: 4, P2: 3, P3: 1,5; làm tròn thận trọng)* | **13 phút tìm** *(trung bình P1: 15, P2: 15, P3: 10; chưa tính 23–76 phút chờ trên `#chung`)* | **~15.304 phút/tháng (~255 giờ/tháng)** | Có (lát cắt hẹp, demo 2 phút, kiểm chứng được nguồn) | **Chọn** |
+| A1 · Tutor hỏi đáp bài học pre-class | 436 học viên *(nguồn: `data/preclass/README.md`)* | ~6 lần/tháng *(tự ước tính)* | ~10 phút *(tự ước tính)* | ~26.160 phút/tháng *(tự ước tính)* | Không kịp làm chắc độ đúng kiến thức toàn khoá trong 10 giờ | Loại |
+| A5 · Vận hành xếp lịch cho ban đào tạo & lab coach | ~30 người vận hành *(22 GV + 8 hỗ trợ, nguồn: `data/training-ops/README.md`)* | ~4 lần/tháng *(tự ước tính)* | ~30 phút *(tự ước tính)* | ~3.600 phút/tháng *(tự ước tính)* | Khó tiếp cận đủ ≥3 người dùng vận hành để phỏng vấn trong 2 ngày | Loại |
 
-- **Impact / tháng** của hướng chọn = __ người × __ lần × __ phút = __ — nguồn từng thừa số: __ (không có nguồn thì ghi rõ *(tự ước tính)*)
-- Hướng ĐÃ LOẠI + vì sao (giữ lại, đừng xoá):
-- Số lần / tháng của từng kiểu người dùng (dùng cho persona ở §8):
+- **Impact / tháng** của hướng chọn = **436 người × 2,7 lần/tháng × 13 phút/lần ≈ 15.304 phút/tháng (~255 giờ/tháng)** — nguồn từng thừa số:
+  - `436 người`: số tài khoản học viên có hoạt động thực tế trên tổng 721 tài khoản của khoá L3–L4 (`data/preclass/README.md`, chọn mức thận trọng).
+  - `2,7 lần/tháng`: trung bình số lần tự tìm lịch/thông tin trong 1 tháng của 3 học viên phỏng vấn (`P1: 4`, `P2: 3`, `P3: 1,5` → trung bình `2,83`, làm tròn thận trọng `2,7`, nguồn `evidence/interviews/P1–P3.md`).
+  - `13 phút/lần`: trung bình thời gian tự tìm mỗi lần của 3 học viên phỏng vấn (`P1: 15`, `P2: 15`, `P3: 10` → `13,3`, làm tròn `13 phút`, nguồn `evidence/interviews/P1–P3.md`; chưa cộng thời gian chờ 23–76 phút trên `#chung` ở `evidence/data-mining.md`).
+- **Hướng ĐÃ LOẠI + vì sao:**
+  - *A1 (Tutor bài học pre-class):* phạm vi nội dung học thuật rộng (nhiều ngày học, nhiều dạng bài), khó xây bộ kiểm chứng độ đúng sư phạm chặt chẽ trong 10 giờ.
+  - *A5 (Vận hành xếp lịch đào tạo):* nhóm người dùng vận hành nhỏ và bận trong thời gian hackathon nên khó thu đủ bằng chứng phỏng vấn thật trong 2 ngày.
+- **Số lần / tháng của từng kiểu người dùng (dùng cho persona ở §8):**
+  - Dùng ít (chủ yếu xem tin tổng hợp Zalo, chỉ tra Discord khi lịch đổi giữa tuần): `1–2 lần/tháng` (nguồn: `P3`).
+  - Dùng vừa (thường xuyên tra lịch workshop, mentor duty, hackathon): `3–4 lần/tháng` (nguồn: `P1`, `P2`).
+  - Dùng nhiều (học viên hay kiểm tra sát giờ lab và hạn nộp hàng tuần): `8 lần/tháng` *(tự ước tính)*.
 
 ## §3. Giải pháp tương tự *(guide 2.1)*
-- [sản phẩm / tính năng gần giống]: một điều đáng học · một điều đáng né · mình khác gì
+- **Discord Search mặc định:** *Đáng học:* tra nhanh theo từ khoá và nhảy thẳng về tin nhắn gốc · *Đáng né:* không phân biệt thông báo cũ (`superseded`) với bản mới nhất, dễ bỏ sót cập nhật trong thread con (P1) và lẫn cả tin đồn học viên · *Mình khác gì:* chỉ trả lời từ nguồn chính thức (`official`), lọc bản cũ bị thay thế, kéo kèm thread cập nhật và cảnh báo khi có 2 nguồn mâu thuẫn.
+- **FAQ Bot Discord theo từ khoá cứng (Carl-bot / Dyno):** *Đáng học:* trả lời tức thì cho câu hỏi lặp · *Đáng né:* nội dung tĩnh dễ lỗi thời khi đổi phòng sát giờ (như ca `C303 → C204`), không biết từ chối/chuyển TA khi gặp yêu cầu học vụ cá nhân hoặc thiếu nguồn · *Mình khác gì:* tra trực tiếp kho thông báo có trạng thái hiệu lực, luôn trích mã & link nguồn để học viên tự kiểm chứng, và tự động tạo bản nháp chuyển TA khi thiếu căn cứ, mâu thuẫn hoặc ngoài phạm vi.
 
 ## §4. Thiết kế *(guide 2.2, 3.2)*
 - **Lát cắt MỘT CÂU** (1 người dùng · 1 việc · 1 quyết định AI · 1 kết quả): Một học viên lớp L3A, khi hỏi về hạn nộp hoặc lịch/phòng học trên Discord, nhận được câu trả lời chỉ khi trợ lý tìm thấy thông báo chính thức kèm link trích dẫn, còn nếu thiếu căn cứ hoặc có thông báo mâu thuẫn thì chuyển cho TA xử lý để học viên không nhận thông tin sai.
