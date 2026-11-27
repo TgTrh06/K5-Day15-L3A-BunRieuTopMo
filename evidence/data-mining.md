@@ -6,14 +6,14 @@
 
 ## 1. Cách đếm — viết TRƯỚC khi chạy
 
-- Data dùng: __ (file nào, từ ngày nào đến ngày nào)
-- Đếm gì: __ · trên tập nào: __ · lọc gì: __
-- **Mẫu số là gì:** __ *(lỗi hay gặp nhất là mẫu số sai)*
-- Script / công thức: __
+- Data dùng: Tin nhắn trên các kênh hỏi đáp / thông báo công khai của lớp L3A trên Discord (ghi rõ tên kênh và khoảng ngày xem, vd 20/11–27/11/2026).
+- Đếm gì: Số câu hỏi về logistics (hạn nộp, lịch học, phòng học, link tài liệu) và số câu hỏi lặp lại ý đã có trong thông báo · trên tập nào: toàn bộ câu hỏi của học viên trong khoảng ngày đã chọn · lọc gì: bỏ tin nhắn trò chuyện phiếm không phải câu hỏi, bỏ tin nhắn của bot.
+- **Mẫu số là gì:** Tổng số câu hỏi của học viên trên kênh trong khoảng ngày đã chốt *(lỗi hay gặp nhất là mẫu số sai)*.
+- Script / công thức: Đếm thủ công theo bảng/sheet quy ước (ghi lại tổng `N`, số câu logistics `x1`, số câu lặp `x2`, `x/N`).
 
 ## 2. Đọc trước, đếm sau
 
-Đã đọc __ dòng đầu và từ điển cột. Các *kiểu* hành vi thấy được (trước khi định nghĩa thứ cần đếm):
+Đã đọc __ dòng đầu và phân loại sơ bộ. Các *kiểu* câu hỏi thấy được (trước khi định nghĩa thứ cần đếm):
 - __
 - __
 
@@ -26,7 +26,7 @@
 
 Ghi dạng "x/N (y%)". "Nhiều bạn…" không phải số.
 
-## 4. ≥5 ví dụ cụ thể (mã dòng / mã đã ẩn danh, không đoán ai là ai)
+## 4. ≥5 ví dụ cụ thể (trích tối đa 2 câu mỗi ví dụ, bỏ tên/username, không đoán ai là ai)
 
 1.
 2.
@@ -36,5 +36,5 @@ Ghi dạng "x/N (y%)". "Nhiều bạn…" không phải số.
 
 ## 5. Giới hạn của data
 
-Data cho biết người ta **làm gì**, không cho biết **vì sao**. Thiếu gì, lệch về phía nào: __
-→ Kiểm lại bằng phỏng vấn / khảo sát nào: __
+Data cho biết người ta **hỏi gì**, không cho biết **vì sao** (họ không tìm được hay lười đọc). Thiếu gì, lệch về phía nào: __
+→ Kiểm lại bằng phỏng vấn / khảo sát nào: Phỏng vấn ≥ 3 học viên L3A và 1 TA/lab coach (`evidence/interviews/P1.md`...).

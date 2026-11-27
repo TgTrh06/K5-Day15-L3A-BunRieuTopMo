@@ -11,10 +11,10 @@
 
 | STT | Họ và tên | Mã học viên | Vai trò | Phần việc chính |
 |---|---|---|---|---|
-| 1 | Trịnh Thanh Tùng | 2A202603456 | Đội trưởng | Chưa phân công |
-| 2 | Nguyễn Phú Nam | 2A202603501 | Thành viên | Chưa phân công |
-| 3 | Nguyễn Hoàng | 2A202603447 | Thành viên | Chưa phân công |
-| 4 | Trương Hoàng Tùng | 2A202603651 | Thành viên | Chưa phân công |
+| 1 | Trịnh Thanh Tùng | 2A202603456 | Đội trưởng | Điều phối, thiết kế spec.md và khung codebase |
+| 2 | Nguyễn Phú Nam | 2A202603501 | Thành viên | Đào và đếm bằng chứng câu hỏi Discord (evidence) |
+| 3 | Nguyễn Hoàng | 2A202603447 | Thành viên | Phỏng vấn người dùng thật và tổng hợp pain (evidence) |
+| 4 | Trương Hoàng Tùng | 2A202603651 | Thành viên | Dựng thông báo giả lập (data) và bộ câu thử (eval) |
 
 **Quy tắc điền**
 - **Lớp:** `L3A` hoặc `L3B`. **Track:** một chữ `A` (EdTech), `B` (Y tế), `C` (Du lịch), `D` (Thương mại điện tử), `E` (Tài chính) hoặc `F` (Làn khác). **Link repo:** link GitHub công khai của nhóm.
