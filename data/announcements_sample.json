@@ -160,6 +160,76 @@
       "link": "https://discord.example/channels/l3a/hoi-dap/THR-03",
       "title": "[Thread] Thắc mắc điểm số, điểm danh và đổi nhóm",
       "content": "TA A xác nhận: Các yêu cầu cá nhân như tra cứu/sửa điểm số, xin bù điểm danh, hoặc xin đổi nhóm không thể xử lý qua bot hỏi đáp tự động; học viên cần nhắn tin hoặc liên hệ trực tiếp TA phụ trách lớp."
+    },
+    {
+      "id": "ANN-12",
+      "type": "announcement",
+      "channel": "#thong-bao-lop-l3a",
+      "timestamp": "2026-11-19 10:00",
+      "author_role": "Ban đào tạo",
+      "status": "superseded",
+      "superseded_by": "THR-04",
+      "link": "https://discord.example/channels/l3a/thong-bao/ANN-12",
+      "title": "Lịch tuần Mentor Duty — Lớp L3A (bản cũ)",
+      "content": "Lịch Mentor Duty tối thứ Tư tuần này bắt đầu lúc 20:00 qua link Zoom: https://zoom.example/l3-mentor-duty. (Lưu ý: Giờ bắt đầu đã được cập nhật trong thread THR-04)."
+    },
+    {
+      "id": "THR-04",
+      "type": "thread",
+      "channel": "#thong-bao-lop-l3a",
+      "timestamp": "2026-11-20 16:45",
+      "author_role": "Mentor A",
+      "status": "active",
+      "supersedes": "ANN-12",
+      "link": "https://discord.example/channels/l3a/thong-bao/THR-04",
+      "title": "[Thread] Cập nhật dời giờ Mentor Duty tối thứ Tư",
+      "content": "Thông báo cập nhật thay thế giờ cũ ở ANN-12: Buổi Mentor Duty tối thứ Tư được dời từ 20:00 sang 20:30, vẫn giữ nguyên link Zoom: https://zoom.example/l3-mentor-duty."
+    },
+    {
+      "id": "ANN-13",
+      "type": "announcement",
+      "channel": "#thong-bao-chung",
+      "timestamp": "2026-11-22 20:00",
+      "author_role": "Ban đào tạo",
+      "status": "superseded",
+      "superseded_by": "ANN-14",
+      "link": "https://discord.example/channels/chung/thong-bao/ANN-13",
+      "title": "Lịch Workshop Online ngày 26/11/2026 (bản cũ)",
+      "content": "Thông báo lịch Workshop Online tối thứ Năm 26/11/2026 bắt đầu lúc 18:00. (Lưu ý: Giờ học đã được lùi lại theo thông báo mới ANN-14)."
+    },
+    {
+      "id": "ANN-14",
+      "type": "announcement",
+      "channel": "#thong-bao-chung",
+      "timestamp": "2026-11-25 19:00",
+      "author_role": "Ban đào tạo",
+      "status": "active",
+      "supersedes": "ANN-13",
+      "link": "https://discord.example/channels/chung/thong-bao/ANN-14",
+      "title": "Cập nhật lùi giờ Workshop Online ngày 26/11/2026",
+      "content": "Cập nhật thay thế thông báo ANN-13: Buổi Workshop Online tối 26/11/2026 được lùi giờ bắt đầu từ 18:00 sang 19:30 để học viên kịp di chuyển về nhà."
+    },
+    {
+      "id": "ANN-15",
+      "type": "announcement",
+      "channel": "#chung",
+      "timestamp": "2026-11-21 09:23",
+      "author_role": "Lab Coach A",
+      "status": "active",
+      "link": "https://discord.example/channels/chung/ANN-15",
+      "title": "Thông báo đổi phòng khẩn cấp ngày 21/11/2026 (C303 → C204)",
+      "content": "Phòng C303 sáng ngày 21/11/2026 đang tổ chức khám sức khoẻ nên lớp Lab 3B chuyển sang học tại phòng C204 (không tự ý chuyển sang phòng 301)."
+    },
+    {
+      "id": "THR-05",
+      "type": "thread",
+      "channel": "#chung",
+      "timestamp": "2026-11-26 14:15",
+      "author_role": "Lab Coach A",
+      "status": "active",
+      "link": "https://discord.example/channels/chung/THR-05",
+      "title": "[Thread] Nơi nộp thông tin thành viên nhóm Hackathon",
+      "content": "Học viên hỏi: Nộp thông tin thành viên nhóm Hackathon ở đâu ạ? | Lab Coach A trả lời: Các nhóm điền danh sách thành viên qua form https://forms.example/ai20k-k5/team-register và cập nhật đúng định dạng vào file TEAMS.md trong repo của nhóm."
     }
   ]
 }

@@ -24,8 +24,8 @@
 |---|---|
 | Dùng để làm gì | Nguồn cho công cụ `search_announcements` / `get_thread` và bộ câu thử `eval/benchmark.csv` |
 | Từ đâu | Nhóm tự viết dựa trên cấu trúc thông báo thường gặp (hạn nộp, đổi phòng, thread giải đáp) và quy ước lớp/phòng từ `data/training-ops/` |
-| Xử lý những bước gì | Tự soạn thủ công bởi Trương Hoàng Tùng theo khung tình huống Track A2, không dùng tin nhắn hay dữ liệu cá nhân thật; gắn nhãn `id`, `type`, `channel`, `timestamp`, `author_role`, `status` (`active` / `superseded`), `link` (miền `.example`), `title`, `content`; kiểm tay 14/14 mục (không dùng script sinh tự động nên không có seed) |
-| Số dòng / số đoạn | 11 thông báo (`ANN-01`..`ANN-11`) + 3 thread (`THR-01`..`THR-03`) = 14 mục (13 mục `active`, 1 mục `superseded`) |
+| Xử lý những bước gì | Tự soạn thủ công bởi Trương Hoàng Tùng theo khung tình huống Track A2 và đối chiếu các tình huống thật từ phỏng vấn `P1–P3` & kênh `#chung`, không dùng tin nhắn hay dữ liệu cá nhân thật; gắn nhãn `id`, `type`, `channel`, `timestamp`, `author_role`, `status` (`active` / `superseded`), `link` (miền `.example`), `title`, `content`; kiểm tay 20/20 mục (không dùng script sinh tự động nên không có seed) |
+| Số dòng / số đoạn | 15 thông báo (`ANN-01`..`ANN-15`) + 5 thread (`THR-01`..`THR-05`) = 20 mục (17 mục `active`, 3 mục `superseded`) |
 | Phiên bản / ngày lấy | 2026-11-27 |
 | Nhãn | `synthetic` |
-| Giới hạn | Do nhóm tự dựng thủ công để mô phỏng các tình huống khó (2 thông báo lệch hạn `ANN-04` vs `ANN-05`, thông báo cũ bị thay thế `ANN-02` → `ANN-03`, phòng chờ xác nhận `ANN-06`), không dùng làm bằng chứng pain |
+| Giới hạn | Do nhóm tự dựng thủ công để mô phỏng các tình huống khó (2 thông báo lệch hạn `ANN-04` vs `ANN-05`, thông báo cũ bị thay thế `ANN-02` → `ANN-03`, `ANN-12` → `THR-04`, `ANN-13` → `ANN-14`, phòng chờ xác nhận `ANN-06`, đổi phòng khẩn cấp `ANN-15`), không dùng làm bằng chứng pain |
