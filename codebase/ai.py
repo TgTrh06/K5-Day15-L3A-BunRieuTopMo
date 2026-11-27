@@ -1,27 +1,18 @@
-"""Nối model — chỗ DUY NHẤT trong bản chạy thử gọi model AI. NHÓM VIẾT phần gọi model thật.
+"""Nối model — chỗ DUY NHẤT trong bản chạy thử gọi model AI.
 
 Hợp đồng (giữ nguyên để khung đo được token):
-    call_model(system: str, user: str) -> dict với 4 khoá
-        "text":       str   chữ model trả về
-        "model":      str   tên model đã gọi (để tra giá ở bảng giá model)
-        "tokens_in":  int   số token vào, lấy từ trường usage trong phản hồi API — KHÔNG ước lượng
-        "tokens_out": int   số token ra, gồm cả token suy luận / suy nghĩ nếu API tính riêng
-    @model_call (từ tracing.py) tự ghi mỗi lần gọi vào trace; agent.py gọi call_model bao nhiêu lần
-    cũng được, khung tự cộng token.
-    Lỗi gọi model (hết lượt, sai key, mất mạng): cứ để exception bay ra — khung ghi lỗi vào cột error.
-
-Chế độ giả (mặc định khi .env chưa có MODEL_PROVIDER, hoặc MODEL_PROVIDER=fake):
-    trả một câu giả cố định, model "fake", token 0 — để luồng chạy hết từ trước CP2 (guide bước 3.2).
-    Lượt `run.py eval` / `run.py simulate` chạy bằng model giả KHÔNG được tính.
-
-Nối model thật: điền .env (chép từ .env.example), rồi viết nhánh gọi API ở dưới theo docs/connect-model.md
-(có ví dụ OpenAI, Claude, model chạy trên máy, và cách nối nhà cung cấp khác). Không dán API key vào file này.
+    call_model(system: str, user: str) -> dict với 4 khoá:
+        "text", "model", "tokens_in", "tokens_out"
 """
+import json
 import os
+import urllib.error
+import urllib.request
 
 from tracing import model_call
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SHOW_RAW = False
 
 
 def load_env(path=os.path.join(ROOT, ".env")):
@@ -42,6 +33,49 @@ MODEL_PROVIDER = (os.environ.get("MODEL_PROVIDER") or "fake").strip().lower()
 MODEL_NAME = (os.environ.get("MODEL_NAME") or "").strip()
 API_KEY = (os.environ.get("API_KEY") or "").strip()
 
+PROVIDER_URLS = {
+    "beeknoee": "https://platform.beeknoee.com/v1/chat/completions",
+    "openai": "https://api.openai.com/v1/chat/completions",
+}
+
+
+def post_json(url: str, headers: dict, body: dict, timeout: int = 60) -> dict:
+    """Gửi POST JSON bằng thư viện chuẩn (urllib), trả về JSON phản hồi."""
+    req_headers = {
+        "Content-Type": "application/json",
+        "User-Agent": "BunRieuTopMo-AI20K/1.0",
+        **headers,
+    }
+    req = urllib.request.Request(
+        url,
+        data=json.dumps(body).encode("utf-8"),
+        method="POST",
+        headers=req_headers,
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            data = json.loads(r.read().decode("utf-8"))
+    except urllib.error.HTTPError as e:
+        raise RuntimeError("HTTP %d: %s" % (e.code, e.read().decode("utf-8", "replace")[:300]))
+    if SHOW_RAW:
+        print(json.dumps(data, ensure_ascii=False, indent=2)[:3000])
+    return data
+
+
+def _call_openai_compat(url: str, system: str, user: str) -> dict:
+    messages = ([{"role": "system", "content": system}] if system else []) + [{"role": "user", "content": user}]
+    data = post_json(
+        url,
+        {"Authorization": "Bearer " + API_KEY},
+        {"model": MODEL_NAME, "messages": messages},
+    )
+    u = data["usage"]
+    return {
+        "text": data["choices"][0]["message"]["content"],
+        "tokens_in": int(u["prompt_tokens"]),
+        "tokens_out": int(u["completion_tokens"]),
+    }
+
 
 @model_call
 def call_model(system: str, user: str) -> dict:
@@ -49,8 +83,15 @@ def call_model(system: str, user: str) -> dict:
         last = (user.strip().splitlines() or [""])[-1]
         return {"text": "[câu trả lời giả — chưa nối model] " + last[:60], "model": "fake", "tokens_in": 0, "tokens_out": 0}
 
-    # NHÓM VIẾT: gọi model thật ở đây (theo MODEL_PROVIDER, MODEL_NAME, API_KEY) rồi trả đúng 4 khoá.
-    # Ví dụ chép được cho từng nhà cung cấp: docs/connect-model.md mục 2.
-    raise NotImplementedError(
-        "chưa viết phần gọi model thật cho MODEL_PROVIDER=%s trong codebase/ai.py — xem docs/connect-model.md"
-        % MODEL_PROVIDER)
+    url = PROVIDER_URLS.get(MODEL_PROVIDER)
+    if not url:
+        raise NotImplementedError(
+            "chưa hỗ trợ MODEL_PROVIDER=%s trong codebase/ai.py — xem docs/connect-model.md" % MODEL_PROVIDER
+        )
+    r = _call_openai_compat(url, system, user)
+    return {
+        "text": r["text"],
+        "model": MODEL_NAME,
+        "tokens_in": r["tokens_in"],
+        "tokens_out": r["tokens_out"],
+    }

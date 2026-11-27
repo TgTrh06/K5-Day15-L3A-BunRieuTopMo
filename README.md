@@ -81,7 +81,7 @@ Nhóm dùng stack khác (Node, Streamlit, notebook…): sửa hàm `run_app()` t
 
 | Thành phần | Thật / Giả | Ghi chú |
 |---|---|---|
-| Lời gọi AI ở quyết định trung tâm | **Thật** (bắt buộc từ CP3) | Model: *(đang dùng chế độ giả lập cho CP2; nối model thật ở CP3)* |
+| Lời gọi AI ở quyết định trung tâm | **Thật** (đã nối từ CP3) | Model: `google/gemini-3.5-flash-lite` (Beeknoee) |
 |  |  |  |
 
 ## Dùng AI vào việc gì
@@ -120,5 +120,5 @@ Nhóm dùng trợ lý AI lập trình để dựng cấu trúc tài liệu, vi�
 | 4 | Bản chạy thử làm trọn lát cắt | `codebase/` · lệnh ở mục "Lệnh" |
 | 5 | Định nghĩa "tốt" + bộ câu thử | `data/DATA_CARD.md` · `eval/` |
 | 6 | Mô phỏng chi phí khi dùng thật | `cost/` |
-| 7 | Slide + demo + video dự phòng | `demo-slides.pdf` ở thư mục gốc · link video: *(cập nhật tại CP3/CP4)* |
+| 7 | Slide + demo + video dự phòng | `demo-slides.pdf` ở thư mục gốc · link video: https://drive.google.com/file/d/1Lf6REzoxoZDU5rfYqwCjwyxLzXT83Ryn/view?usp=sharing |
 | + | *Bonus:* người dùng thử | `validation/log.md` |
