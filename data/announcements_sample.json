@@ -1,0 +1,166 @@
+{
+  "dataset": "Kho thông báo & thread hỏi đáp Discord giả lập — Lớp L3A (Track A2)",
+  "label": "synthetic",
+  "version": "2026-11-27",
+  "author": "Trương Hoàng Tùng",
+  "note": "Dữ liệu giả lập tự soạn theo bối cảnh vận hành lớp L3A khoá AI20K (tham khảo cấu trúc lịch/phòng trong data/training-ops/) để chạy thử công cụ và bộ câu thử. Không chứa tin nhắn hay dữ liệu cá nhân thật và không dùng làm bằng chứng pain.",
+  "items": [
+    {
+      "id": "ANN-01",
+      "type": "announcement",
+      "channel": "#thong-bao-lop-l3a",
+      "timestamp": "2026-11-21 18:00",
+      "author_role": "Ban đào tạo",
+      "status": "active",
+      "link": "https://discord.example/channels/l3a/thong-bao/ANN-01",
+      "title": "Hạn nộp bài Lab 12 — Lớp L3A",
+      "content": "Thông báo chính thức lớp L3A: Hạn nộp bài Lab 12 là 23:59 ngày 24/11/2026 (2026-11-24 23:59). Học viên nộp bài đúng hạn qua cổng LMS của lớp."
+    },
+    {
+      "id": "ANN-02",
+      "type": "announcement",
+      "channel": "#thong-bao-lop-l3a",
+      "timestamp": "2026-11-23 09:00",
+      "author_role": "Ban đào tạo",
+      "status": "superseded",
+      "superseded_by": "ANN-03",
+      "link": "https://discord.example/channels/l3a/thong-bao/ANN-02",
+      "title": "Lịch học và phòng học LEC 13 — Lớp L3A (bản cũ)",
+      "content": "Buổi LEC 13 lớp L3A diễn ra sáng 25/11/2026 (09:00-13:00) tại phòng H209. (Lưu ý: Thông báo này đã bị thay thế bởi ANN-03)."
+    },
+    {
+      "id": "ANN-03",
+      "type": "announcement",
+      "channel": "#thong-bao-lop-l3a",
+      "timestamp": "2026-11-24 16:30",
+      "author_role": "Ban đào tạo",
+      "status": "active",
+      "supersedes": "ANN-02",
+      "link": "https://discord.example/channels/l3a/thong-bao/ANN-03",
+      "title": "Cập nhật đổi phòng học LEC 13 — Lớp L3A",
+      "content": "Cập nhật thay thế thông báo ANN-02: Buổi LEC 13 lớp L3A sáng 25/11/2026 (09:00-13:00) chuyển từ phòng H209 sang phòng C401."
+    },
+    {
+      "id": "ANN-04",
+      "type": "announcement",
+      "channel": "#thong-bao-chung",
+      "timestamp": "2026-11-25 10:00",
+      "author_role": "Ban đào tạo",
+      "status": "active",
+      "link": "https://discord.example/channels/chung/thong-bao/ANN-04",
+      "title": "Hạn nộp bài Lab 14 toàn khối L3",
+      "content": "Thông báo chung khối L3: Hạn nộp bài Lab 14 là 22:00 ngày 29/11/2026 (2026-11-29 22:00)."
+    },
+    {
+      "id": "ANN-05",
+      "type": "announcement",
+      "channel": "#lop-l3a",
+      "timestamp": "2026-11-25 15:20",
+      "author_role": "TA A",
+      "status": "active",
+      "link": "https://discord.example/channels/l3a/lop-l3a/ANN-05",
+      "title": "Nhắc lịch và hạn nộp Lab 14 lớp L3A",
+      "content": "Nhắc các bạn lớp L3A hoàn thành và nộp bài Lab 14 trước 23:59 ngày 30/11/2026 (2026-11-30 23:59)."
+    },
+    {
+      "id": "ANN-06",
+      "type": "announcement",
+      "channel": "#thong-bao-lop-l3a",
+      "timestamp": "2026-11-26 20:00",
+      "author_role": "Lab Coach A",
+      "status": "active",
+      "link": "https://discord.example/channels/l3a/thong-bao/ANN-06",
+      "title": "Lịch buổi thực hành LAB 14 — Lớp L3A",
+      "content": "Lớp L3A — LAB 14 diễn ra chiều thứ Bảy 28/11/2026 (2026-11-28 14:00-18:00). Phòng: chờ xác nhận (dự kiến H210). Vui lòng theo dõi cập nhật chính thức trước giờ học."
+    },
+    {
+      "id": "ANN-07",
+      "type": "announcement",
+      "channel": "#thong-bao-chung",
+      "timestamp": "2026-11-27 08:30",
+      "author_role": "Ban đào tạo",
+      "status": "active",
+      "link": "https://discord.example/channels/chung/thong-bao/ANN-07",
+      "title": "Các mốc nộp Checkpoint Hackathon Ngày 15",
+      "content": "Lịch nộp 4 checkpoint Hackathon Ngày 15: CP1 lúc 17:00 ngày 27/11; CP2 lúc 19:30 ngày 27/11; CP3 lúc 10:00 ngày 28/11; CP4 lúc 14:30 ngày 28/11."
+    },
+    {
+      "id": "ANN-08",
+      "type": "announcement",
+      "channel": "#thong-bao-lop-l3a",
+      "timestamp": "2026-11-27 11:00",
+      "author_role": "Ban đào tạo",
+      "status": "active",
+      "link": "https://discord.example/channels/l3a/thong-bao/ANN-08",
+      "title": "Chuyển hình thức học LEC 14 sang Online — Lớp L3A",
+      "content": "Lớp L3A — LEC 14 sáng Chủ nhật 29/11/2026 (2026-11-29 09:00-13:00) chuyển sang học Online qua Zoom. Link tham gia chính thức: https://zoom.example/l3a-lec14."
+    },
+    {
+      "id": "ANN-09",
+      "type": "announcement",
+      "channel": "#noi-quy-l3a",
+      "timestamp": "2026-11-18 14:00",
+      "author_role": "Ban đào tạo",
+      "status": "active",
+      "link": "https://discord.example/channels/l3a/noi-quy/ANN-09",
+      "title": "Quy định nộp bài trễ hạn — Lớp L3A",
+      "content": "Quy định nộp muộn lớp L3A: Nộp trễ trong vòng 24 giờ kể từ hạn chót bị trừ 20% điểm bài lab; nộp trễ quá 24 giờ tính 0 điểm. Trường hợp có lý do đặc biệt (ốm đau, sự cố bất khả kháng) cần liên hệ trực tiếp TA để xem xét ngoại lệ."
+    },
+    {
+      "id": "ANN-10",
+      "type": "announcement",
+      "channel": "#thong-bao-chung",
+      "timestamp": "2026-11-27 12:00",
+      "author_role": "Ban đào tạo",
+      "status": "active",
+      "link": "https://discord.example/channels/chung/thong-bao/ANN-10",
+      "title": "Lịch và phòng Demo Hackathon Ngày 15",
+      "content": "Lịch Demo ngày 28/11/2026 (2026-11-28): Demo Zone diễn ra từ 14:30-16:00 và Demo Phòng diễn ra từ 16:00-18:00 tại hai phòng H209 & H210."
+    },
+    {
+      "id": "ANN-11",
+      "type": "announcement",
+      "channel": "#thong-bao-lop-l3a",
+      "timestamp": "2026-11-15 19:00",
+      "author_role": "Ban đào tạo",
+      "status": "active",
+      "link": "https://discord.example/channels/l3a/thong-bao/ANN-11",
+      "title": "Link cổng nộp bài Lab chính thức trên LMS — Lớp L3A",
+      "content": "Học viên lớp L3A nộp tất cả bài tập Lab trên cổng LMS chính thức tại địa chỉ: https://lms.example/ai20k-k5/l3a/submit."
+    },
+    {
+      "id": "THR-01",
+      "type": "thread",
+      "channel": "#hoi-dap-l3a",
+      "timestamp": "2026-11-25 21:10",
+      "author_role": "TA A",
+      "status": "active",
+      "link": "https://discord.example/channels/l3a/hoi-dap/THR-01",
+      "title": "[Thread] Định dạng nộp bài Lab 13 lớp L3A",
+      "content": "Học viên hỏi: Lab 13 nộp file ZIP hay link GitHub ạ? | TA A trả lời: Lab 13 bắt buộc nộp link GitHub repository để ở chế độ Public, KHÔNG nộp file ZIP."
+    },
+    {
+      "id": "THR-02",
+      "type": "thread",
+      "channel": "#hoi-dap-l3a",
+      "timestamp": "2026-11-26 08:45",
+      "author_role": "Lab Coach A",
+      "status": "active",
+      "link": "https://discord.example/channels/l3a/hoi-dap/THR-02",
+      "title": "[Thread] Phòng thực hành LAB 13 lớp L3A",
+      "content": "Học viên hỏi: Chiều nay LAB 13 học phòng nào vậy ạ? | Lab Coach A trả lời: Buổi thực hành LAB 13 lớp L3A học tại phòng D302."
+    },
+    {
+      "id": "THR-03",
+      "type": "thread",
+      "channel": "#hoi-dap-l3a",
+      "timestamp": "2026-11-22 17:30",
+      "author_role": "TA A",
+      "status": "active",
+      "link": "https://discord.example/channels/l3a/hoi-dap/THR-03",
+      "title": "[Thread] Thắc mắc điểm số, điểm danh và đổi nhóm",
+      "content": "TA A xác nhận: Các yêu cầu cá nhân như tra cứu/sửa điểm số, xin bù điểm danh, hoặc xin đổi nhóm không thể xử lý qua bot hỏi đáp tự động; học viên cần nhắn tin hoặc liên hệ trực tiếp TA phụ trách lớp."
+    }
+  ]
+}
+
