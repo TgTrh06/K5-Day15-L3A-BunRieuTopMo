@@ -111,10 +111,10 @@ flowchart LR
 - Kết quả: lượt 1 `22/24 (92%)` (`tu_choi` 8/8 = 100%) · lượt 2 `24/24 (100%)` (`tu_choi` 8/8 = 100%) — run ID: `run-1@20261128-032957` / `run-2@20261128-033154` → chi tiết `eval/report.md`, hồ sơ `eval/README.md`
 
 ## §8. Chi phí khi dùng thật *(guide 4.2)*
-- Persona + giá: `cost/personas.yaml` · lượt mô phỏng: `cost/simulate-__.csv` (__ phiên)
-- Chi phí / task thành công: __ (model __) · __ (model __)
-- Chi phí / tháng ở quy mô thật: thấp __ · cơ sở __ · cao __ → chi tiết `cost/cost-estimate.md`
-- So với impact / người / tháng (§2): đáng làm không, vì sao:
+- Persona + giá: `cost/personas.yaml` · lượt mô phỏng: `cost/simulate-1.csv` (`50` phiên, `seed 42`; `31/50` phiên thành công, `19/50` phiên lỗi số dư API từ `S032` đã loại khỏi trung bình)
+- Chi phí / task thành công: `$0.00069` ≈ `18 ₫` (`gemini-3.5-flash-lite`) · `$0.0037` ≈ `93 ₫` (`gpt-6.2-sol`)
+- Chi phí / tháng ở quy mô thật (`gemini-3.5-flash-lite`): thấp `$0.6271` (300 người) · cơ sở `$0.9115` (436 người, ≈ `23.151 ₫`) · cao `$1.51` (721 người) → chi tiết `cost/cost-estimate.md`
+- So với impact / người / tháng (§2): **Rất đáng làm** — chi phí chỉ `$0.0021`/người/tháng (≈ `53 ₫`) để tiết kiệm ~`35 phút`/người/tháng (~`255 giờ`/tháng cho 436 học viên) và tránh nhầm phòng/trễ hạn.
 
 ## §9. Rủi ro & an toàn
 - **Dữ liệu:** kho thông báo chạy thử `data/announcements_sample.json` là dữ liệu tự dựng (`synthetic`), TA/lab coach trong dữ liệu chỉ ghi tên chung "TA A", "Lab Coach A"; không commit dump chat Discord thật, ví dụ trích từ Discord tối đa 2 câu và đã xoá tên/username; phỏng vấn ghi P1–P3 theo vai, không tên. Không thu và không đưa vào model: tên, mã học viên, username/ID Discord, điểm số, điểm danh. Không gửi tin nhắn Discord thật của học viên vào model gói miễn phí.

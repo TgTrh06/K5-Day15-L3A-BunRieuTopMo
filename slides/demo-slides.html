@@ -241,13 +241,14 @@
 <!-- 6 -->
 <section class="slide">
   <div class="num">06 / 08</div>
-  <h1>Chi phí khi dùng thật: <em>một lần gọi model</em> cho mỗi câu hỏi</h1>
+  <h1>Chi phí khi dùng thật: <em>~53 ₫ / người / tháng</em> (cơ sở 436 người)</h1>
   <div class="known">
-    <div><div class="v">~1.000</div><div class="l">token vào mỗi câu hỏi (đo thật, lượt 2)</div></div>
-    <div><div class="v">76–338</div><div class="l">token ra mỗi câu trả lời (đo thật, lượt 2)</div></div>
-    <div><div class="v">1</div><div class="l">lần gọi model cho mỗi câu hỏi, vì là workflow cố định</div></div>
+    <div><div class="v">$0.00069</div><div class="l">≈ 18 ₫ / task thành công (gemini-3.5-flash-lite, đạt 100%)</div></div>
+    <div><div class="v">$0.91 / tháng</div><div class="l">≈ 23.151 ₫ cho 436 người (thấp 300: $0.63 · cao 721: $1.51)</div></div>
+    <div><div class="v">53 ₫ vs 35′</div><div class="l">chi 53 ₫ / người / tháng để tiết kiệm ~35 phút tìm kiếm</div></div>
   </div>
-  <div class="foot"><span>Nguồn: eval/run-2.csv (tokens_in, tokens_out) · spec.md §4</span><span>BunRieuTopMo · A2</span></div>
+  <p style="margin-top:16px; font-size:15px; color:var(--ink2);">Mô phỏng 50 phiên (31 phiên hợp lệ, 19 phiên hết số dư từ S032 đã loại). Nếu dùng model lớn <code>gpt-6.2-sol</code>: $0.0037 / task · $4.84 / tháng (≈ 122.975 ₫).</p>
+  <div class="foot"><span>Nguồn: cost/simulate-1.csv · cost/cost-estimate.md · spec.md §8</span><span>BunRieuTopMo · A2</span></div>
 </section>
 
 <!-- 7 -->
@@ -258,10 +259,10 @@
   <div class="because">
     <div><div class="k">PAIN CÓ THẬT · TRANG 1</div><p>3/3 học viên mất 10–15 phút mỗi lần tìm. 3/7 câu logistics trên #chung chờ quá 15 phút hoặc không ai trả lời.</p></div>
     <div><div class="k">BOT LÀM ĐƯỢC · TRANG 5</div><p>24/24 câu đạt ở lượt 2, kể cả 8/8 câu phải từ chối và 2 câu tấn công.</p></div>
-    <div><div class="k">CHI PHÍ · TRANG 6</div><p>Mỗi câu hỏi chỉ một lần gọi model, khoảng 1.000 token vào và dưới 340 token ra.</p></div>
+    <div><div class="k">CHI PHÍ · TRANG 6</div><p>Chỉ $0.00069 (≈ 18 ₫) / task thành công và $0.91 / tháng (~53 ₫ / người) cho 436 học viên — rất đáng làm.</p></div>
   </div>
-  <p class="why-not">Chưa "Go" vì bot mới chạy trên 20 thông báo nhóm tự soạn, lượt 2 đo trên chính bộ câu đã dùng để sửa, và tìm theo từ khoá có thể trả lời "không có" khi học viên hỏi bằng từ khác.</p>
-  <div class="foot"><span>Nguồn: evidence/summary.md · eval/report.md · eval/run-2.csv</span><span>BunRieuTopMo · A2</span></div>
+  <p class="why-not">Chưa "Go" vì bot mới chạy trên 20 thông báo nhóm tự soạn, lượt 2 đo trên chính bộ câu đã dùng để sửa, và tìm theo từ khoá có thể bỏ sót khi gõ viết tắt dính chữ ("lab14").</p>
+  <div class="foot"><span>Nguồn: evidence/summary.md · eval/report.md · cost/cost-estimate.md</span><span>BunRieuTopMo · A2</span></div>
 </section>
 
 <!-- 8 -->
