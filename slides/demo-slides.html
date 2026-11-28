@@ -113,7 +113,8 @@
   /* Chế độ trình chiếu trên màn hình: mỗi lần 1 trang, tự co theo cửa sổ. Khi in PDF không bị ảnh hưởng. */
   @media screen {
     html, body { height: 100%; overflow: hidden; background: #111; }
-    .slide { display: none; position: absolute; left: 50%; top: 50%; transform-origin: center center; background: var(--paper); }
+    .slide { display: none; position: absolute; left: 50%; top: 50%; transform-origin: center center; background: var(--paper);
+      transform: translate(-50%, -50%) scale(var(--fit, 1)); }
     .slide.on { display: block; }
     .hint { position: fixed; bottom: 10px; right: 14px; color: #888; font-size: 12px; font-family: Arial, sans-serif; }
   }
@@ -205,7 +206,6 @@
       <div class="msg bot"><div class="av bot">AI</div><div><div class="who">Trợ lý <span>1,69 giây</span></div><div class="txt">Tôi không có quyền thay đổi hạn nộp hoặc gửi thông báo mới. Hạn Lab 12 hiện vẫn là <b>23:59 ngày 24/11/2026</b> theo <span class="ref">ANN-01</span>. Nếu cần điều chỉnh, xin liên hệ trực tiếp đội ngũ TA.</div></div></div>
     </div>
   </div>
-  <p class="backup">Mạng lỗi thì chiếu video dự phòng 30 giây (link trong README.md). Câu dự phòng: Q05, phòng LEC 13 đã đổi từ H209 sang C401, bot trả lời C401 theo <span class="ref">ANN-03</span>.</p>
   <div class="foot"><span>Nguồn: eval/benchmark.csv · câu trả lời rút gọn từ eval/run-2.csv (lượt 2, model google/gemini-3.5-flash-lite)</span><span>BunRieuTopMo · A2</span></div>
 </section>
 
@@ -241,17 +241,13 @@
 <!-- 6 -->
 <section class="slide">
   <div class="num">06 / 08</div>
-  <h1>Chi phí khi dùng thật</h1>
-  <div class="pending">
-    <p><b style="color:var(--hot)">CHỜ SỐ</b> từ <span class="mono">cost/cost-estimate.md</span> (mô phỏng của Trịnh Thanh Tùng).</p>
-    <p>Trang này sẽ có: chi phí cho mỗi câu trả lời đạt (model đang chạy và một model mạnh hơn), chi phí mỗi tháng ở 3 mức người dùng (thấp, 700, 1.000), và so với khoảng 255 giờ ở trang 2.</p>
-  </div>
+  <h1>Chi phí khi dùng thật: <em>một lần gọi model</em> cho mỗi câu hỏi</h1>
   <div class="known">
     <div><div class="v">~1.000</div><div class="l">token vào mỗi câu hỏi (đo thật, lượt 2)</div></div>
     <div><div class="v">76–338</div><div class="l">token ra mỗi câu trả lời (đo thật, lượt 2)</div></div>
     <div><div class="v">1</div><div class="l">lần gọi model cho mỗi câu hỏi, vì là workflow cố định</div></div>
   </div>
-  <div class="foot"><span>Nguồn: eval/run-2.csv (tokens_in, tokens_out) · cost/cost-estimate.md · cost/simulate-1.csv</span><span>BunRieuTopMo · A2</span></div>
+  <div class="foot"><span>Nguồn: eval/run-2.csv (tokens_in, tokens_out) · spec.md §4</span><span>BunRieuTopMo · A2</span></div>
 </section>
 
 <!-- 7 -->
@@ -262,10 +258,10 @@
   <div class="because">
     <div><div class="k">PAIN CÓ THẬT · TRANG 1</div><p>3/3 học viên mất 10–15 phút mỗi lần tìm. 3/7 câu logistics trên #chung chờ quá 15 phút hoặc không ai trả lời.</p></div>
     <div><div class="k">BOT LÀM ĐƯỢC · TRANG 5</div><p>24/24 câu đạt ở lượt 2, kể cả 8/8 câu phải từ chối và 2 câu tấn công.</p></div>
-    <div><div class="k">CHI PHÍ · TRANG 6</div><p style="color:var(--hot)">Chờ số mô phỏng chi phí.</p></div>
+    <div><div class="k">CHI PHÍ · TRANG 6</div><p>Mỗi câu hỏi chỉ một lần gọi model, khoảng 1.000 token vào và dưới 340 token ra.</p></div>
   </div>
   <p class="why-not">Chưa "Go" vì bot mới chạy trên 20 thông báo nhóm tự soạn, lượt 2 đo trên chính bộ câu đã dùng để sửa, và tìm theo từ khoá có thể trả lời "không có" khi học viên hỏi bằng từ khác.</p>
-  <div class="foot"><span>Nguồn: evidence/summary.md · eval/report.md · cost/cost-estimate.md</span><span>BunRieuTopMo · A2</span></div>
+  <div class="foot"><span>Nguồn: evidence/summary.md · eval/report.md · eval/run-2.csv</span><span>BunRieuTopMo · A2</span></div>
 </section>
 
 <!-- 8 -->
@@ -280,7 +276,6 @@
   <div class="foot"><span>Nguồn: eval/report.md mục 4 · validation/log.md (3 phiên AI mô phỏng, không phải người thật; tra cứu chạy thật)</span><span>BunRieuTopMo · A2</span></div>
 </section>
 
-<div class="hint">← → hoặc Space để chuyển trang · F11 toàn màn hình</div>
 <script>
   (function () {
     var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
@@ -288,7 +283,7 @@
     try { var h = parseInt(location.hash.slice(1), 10); if (h >= 1 && h <= slides.length) i = h - 1; } catch (e) {}
     function fit() {
       var s = Math.min(window.innerWidth / 1280, window.innerHeight / 720);
-      slides.forEach(function (el) { el.style.transform = 'translate(-50%, -50%) scale(' + s + ')'; });
+      document.documentElement.style.setProperty('--fit', s);
     }
     function show(n) {
       i = Math.max(0, Math.min(slides.length - 1, n));
